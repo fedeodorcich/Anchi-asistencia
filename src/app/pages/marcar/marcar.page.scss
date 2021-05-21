@@ -1,0 +1,34 @@
+input[type=radio] {
+    display: none;
+}
+
+.activated {
+    background-color: teal;
+}
+
+.activated ion-img {
+    filter: invert(100%);
+}
+
+ion-select {
+    /* Applies to the value and placeholder color */
+    color: #ffffff;
+    /* Set a different placeholder color */
+    --placeholder-color: white;
+    /* Set full opacity on the placeholder */
+    --placeholder-opacity: 1;
+    font-weight: 600;
+    background-color: #3880ff;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    align-self: center;
+}
+
+ion-button {
+    width: 100%;
+}
+
+input[type=radio]:checked+ion-card:parent {
+    background-color: blueviolet;
+}

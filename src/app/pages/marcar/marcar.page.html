@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Marcar</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="step==0">
+        <h2 style="text-align: center;">Selecione su Área</h2>
+        <ion-row>
+            <ion-col>
+                <label for="anchi-icon">
+                    <ion-card id="anchipurac" class="cardes">
+                        <input type="radio" id="anchi-icon" name="select" value="anchipurac" (change)="radioChange($event)">
+                        <ion-img src="../../../assets/svg/logo-anchipurac.svg"></ion-img>
+                    </ion-card>
+                </label>
+            </ion-col>
+            <ion-col>
+                <label for="obser-icon">
+                    <ion-card id="observatorio" class="cardes">
+                        <input type="radio" id="obser-icon" name="select" value="observatorio" (change)="radioChange($event)">
+                        <ion-img src="../../../assets/svg/logo-observatorio.svg "></ion-img>
+                    </ion-card>
+                </label>
+            </ion-col>
+        </ion-row>
+    </ion-list>
+
+    <ion-list *ngIf="step==1">
+        <h2 style="text-align: center;">Selecione su nombre</h2>
+        <ion-list>
+
+            <ion-item>
+                <ion-select placeholder="Seleccionar">
+                    <ion-select-option *ngFor="let element of list">{{element.nombre}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+        </ion-list>
+    </ion-list>
+
+    <div class="ion-text-center" style="padding: 1em;">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-button *ngIf="step!=0" color="danger" (click)="decrease()">Atrás</ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="increase()" color="success" *ngIf="step==1">Marcar</ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-button (click)="increase()" color="tertiary" *ngIf="step==1">Consultar</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-button (click)="increase()" *ngIf="step==0">Siguiente</ion-button>
+    </div>
+
+</ion-content>

@@ -1,0 +1,27 @@
+.inputter {
+    padding: 0px 1em;
+}
+
+.custom-input {
+    width: 100%;
+    background-color: #eeeeee;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    margin: 1em 0;
+    display: block;
+    padding: 20px;
+    font-size: 15px;
+    transition: all .3s ease-in-out;
+     ::placeholder {
+        color: #929292;
+    }
+}
+
+.custom-input:focus {
+    color: #757575;
+}
+
+textarea.custom-input {
+    resize: none;
+}
